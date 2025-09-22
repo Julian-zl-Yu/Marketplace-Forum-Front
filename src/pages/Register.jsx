@@ -23,7 +23,7 @@ export default function Register(){
       }catch(e){ setErr(e.message) }
     }}>
       <h1 className="text-lg font-semibold">注册账号</h1>
-      <p className="text-sm text-slate-600 mt-1">注册一个新的找多多账号</p>
+      <p className="text-sm text-slate-600 mt-1">注册一个新的帖多多账号</p>
 
       <label className="label mt-3">用户名</label>
       <input className="input" value={username} onChange={e=>setUsername(e.target.value)} required />

@@ -16,7 +16,7 @@ export default function Login(){
       catch(e){ setErr(e.message) }
     }}>
       <h1 className="text-lg font-semibold">登录</h1>
-      <p className="text-sm text-slate-60a0 mt-1">使用你的找多多账号登录</p>
+      <p className="text-sm text-slate-60a0 mt-1">使用你的帖多多账号登录</p>
 
       <label className="label mt-3">用户名</label>
       <input className="input" value={username} onChange={e=>setUsername(e.target.value)} required />
