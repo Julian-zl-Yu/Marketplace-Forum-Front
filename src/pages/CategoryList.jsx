@@ -23,9 +23,9 @@ function PostCard({ p, onDeleted }) {
   const me = auth.getUser()?.username
   const tryDelete = async (e) => {
     e.preventDefault()
-    if (!confirm('Delete this post?')) return
+    if (!confirm('删除这条帖子？')) return
     try { await posts.removeSmart(p.id); onDeleted?.(p.id) }
-    catch (err) { alert('Delete failed: ' + err.message) }
+    catch (err) { alert('非用户本人删除失败：' + err.message) }
   }
   return (
       <li className="card p-4 hover:shadow">
@@ -47,7 +47,7 @@ function PostCard({ p, onDeleted }) {
             {p.wage != null && <span>· 薪资：¥{p.wage}/小时</span>}
           </div>
         </Link>
-        {me && <div className="mt-2"><button className="btn btn-ghost" onClick={tryDelete}>Delete</button></div>}
+        {me && <div className="mt-2"><button className="btn btn-ghost" onClick={tryDelete}>删除（需用户本人）</button></div>}
       </li>
   )
 }
@@ -91,7 +91,7 @@ export default function CategoryList({ cat }) {
               <ul className="mt-4 space-y-3">
                 {data.map(p => <PostCard key={p.id} p={p} onDeleted={(id)=> setData(prev=>prev.filter(x=>x.id!==id))} />)}
               </ul>
-              {!data.length && <p className="text-sm text-slate-600 mt-2">No posts yet.</p>}
+              {!data.length && <p className="text-sm text-slate-600 mt-2">还没有新发布</p>}
             </>
         )}
       </section>
