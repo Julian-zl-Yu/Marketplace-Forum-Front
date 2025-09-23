@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../api/client.js'
+import { Link } from "react-router-dom";
+
 
 export default function Login(){
   const nav = useNavigate()
@@ -12,7 +14,7 @@ export default function Login(){
     <form className="max-w-md card p-4 mx-auto" onSubmit={async e=>{
       e.preventDefault()
       setErr('')
-      try{ await auth.login(username, password); location.href = '/' }
+      try{ await auth.login(username, password); nav('/'); }
       catch(e){ setErr(e.message) }
     }}>
       <h1 className="text-lg font-semibold">登录</h1>
