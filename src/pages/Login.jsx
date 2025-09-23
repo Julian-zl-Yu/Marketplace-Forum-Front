@@ -14,7 +14,7 @@ export default function Login(){
     <form className="max-w-md card p-4 mx-auto" onSubmit={async e=>{
       e.preventDefault()
       setErr('')
-      try{ await auth.login(username, password); nav('/'); }
+      try{ await auth.login(username, password); nav('/'); window.location.reload();}
       catch(e){ setErr(e.message) }
     }}>
       <h1 className="text-lg font-semibold">登录</h1>
