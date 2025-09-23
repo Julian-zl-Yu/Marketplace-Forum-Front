@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { posts, enums, auth } from '../api/client.js'
 import { Link } from "react-router-dom";
+import { categoryLabels } from '../api/client.js'
 
 
 export default function NewPost(){
@@ -43,10 +44,15 @@ export default function NewPost(){
 
         <div className="grid sm:grid-cols-2 gap-3 mt-3">
           <div>
-            <label className="label">Category</label>
+            <label className="label">分类</label>
             <select className="input" value={form.category} onChange={set('category')}>
-              {enums.categories.map(c => <option key={c} value={c}>{c}</option>)}
+              {enums.categories.map(c => (
+                  <option key={c} value={c}>
+                    {categoryLabels[c] ?? c /* 没映射就回退显示英文 */}
+                  </option>
+              ))}
             </select>
+
           </div>
 
           {/* 删除 Author 输入框 */}
