@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { auth } from '../api/client.js'
 
+
 export default function Register(){
   const nav = useNavigate()
   const [username, setUsername] = useState('')

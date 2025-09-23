@@ -26,7 +26,9 @@ export default function Login(){
 
       {err && <p className="mt-2 text-sm text-rose-600">{err}</p>}
       <button className="btn btn-primary mt-3">登录</button>
-      <p className="text-sm text-slate-600 mt-3">还没有账号？<a href="/register" className="underline">创建账号</a>.</p>
+        <p className="text-sm text-slate-600 mt-3">
+            还没有账号？<Link to="/register" className="underline">创建账号</Link>.
+        </p>
     </form>
   )
 }

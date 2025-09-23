@@ -2,12 +2,16 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { posts, enums, auth } from '../api/client.js'
+import { Link } from "react-router-dom";
+
 
 export default function NewPost(){
   const nav = useNavigate()
   const me = auth.getUser()?.username            // ← 当前登录用户名
   const token = auth.getToken()
-  if (!token) return <p className="text-sm text-slate-600">你必须<a href="/login" className="underline">登录</a>来发表新内容</p>
+  if (!token) return <p className="text-sm text-slate-600">
+    你必须 <Link to="/login" className="underline">登录</Link> 来发表新内容
+  </p>
 
   const [form, setForm] = useState({
     category: 'SECOND_HAND',
