@@ -47,7 +47,7 @@ function PostCard({ p, onDeleted }) {
             {p.wage != null && <span>· 薪资：¥{p.wage}/小时</span>}
           </div>
         </Link>
-        {me && <div className="mt-2"><button className="btn btn-ghost" onClick={tryDelete}>删除（需用户本人）</button></div>}
+        {/*{me && <div className="mt-2"><button className="btn btn-ghost" onClick={tryDelete}>删除（需用户本人）</button></div>}*/}
       </li>
   )
 }
