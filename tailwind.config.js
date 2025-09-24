@@ -11,7 +11,7 @@ export default { content: ["./index.html","./src/**/*.{js,jsx,ts,tsx}"],
             },
 
             fontFamily: {
-                zcool: ['"ZCOOL KuaiLe"', 'sans-serif'],
+                zcool: ['ZCOOLKuaiLeLocal', 'system-ui', 'Arial', 'sans-serif'],
             }
         },
     }, plugins: [] }

@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'ZCOOLKuaiLeLocal';
+    src: url('./assets/fonts/ZhanKuKuaiLeTi2016XiuDingBan-1.ttf') format('truetype');
+    font-display: swap;
+}
+
 body { @apply bg-slate-50 text-slate-900; }
 a { @apply text-blue-600 hover:underline; }
 .container { @apply max-w-6xl mx-auto px-4; }
