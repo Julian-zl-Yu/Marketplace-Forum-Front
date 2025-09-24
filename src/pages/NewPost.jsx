@@ -8,7 +8,7 @@ import { categoryLabels } from '../api/client.js'
 
 export default function NewPost(){
   const nav = useNavigate()
-  const me = auth.getUser()?.username            // ← 当前登录用户名
+  const me = auth.getUser()?.username            // ←当前登录用户名
   const token = auth.getToken()
   if (!token) return <p className="text-sm text-slate-600">
     你必须 <Link to="/login" className="underline">登录</Link> 来发表新内容
